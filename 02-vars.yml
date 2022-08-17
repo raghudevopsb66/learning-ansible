@@ -12,3 +12,11 @@
 # Play Variable - Declare on play, means all tasks can access that variable
 # Note: Variables of one play cannot be accessed by another play (By default)
 
+- name: Demo on Play var files
+  hosts: all
+  vars_files: demo-vars.yml
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL == {{ URL }}
+
