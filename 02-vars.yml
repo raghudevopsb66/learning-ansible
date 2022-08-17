@@ -44,7 +44,11 @@
   tasks:
     - name: Print URL
       ansible.builtin.debug:
-        msg: URL == {{ URL2 }}
+        msg: URL == {{ URL }}
+
+- name: Variable from Roles
+  hosts: all
+  roles: sample
 
 
 
