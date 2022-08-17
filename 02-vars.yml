@@ -48,7 +48,8 @@
 
 - name: Variable from Roles
   hosts: all
-  roles: sample
+  roles:
+    - sample
 
 
 
