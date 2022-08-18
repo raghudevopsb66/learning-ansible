@@ -3,4 +3,4 @@
   tasks:
     - name: Print upcase to lower case
       ansible.builtin.debug:
-        msg: "{{ NAME | lower }}
+        msg: "{{ NAME | lower }}"
