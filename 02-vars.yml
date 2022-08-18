@@ -67,7 +67,7 @@
 
     - name: Print Output
       ansible.builtin.debug:
-        msg: "{{SHELL_OUTPUT}}"
+        msg: "{{SHELL_OUTPUT.stdout}}"
 
 
 
