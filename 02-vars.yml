@@ -1,66 +1,66 @@
-- name: Demo on Play vars
-  hosts: all
-  vars:
-    URL: play.example.com
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL == {{ URL }}
-
-## In ansible we access variable within two flower brackets. {{URL}}, {{ URL }}, That spacing helps in reading the code in a better way.
-
-# Play Variable - Declare on play, means all tasks can access that variable
-# Note: Variables of one play cannot be accessed by another play (By default)
-
-- name: Demo on Play var files
-  hosts: all
-  vars_files: demo-vars.yml
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: '{{ URL }}'
-
-
-- name: Demo on task level variables
-  hosts: all
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL == {{ URL }}
-      #vars_files:
-      vars:
-        URL: task.example.com
-## Note: task level variables are limited to only that task.
-
-- name: Read the variable from inventory file
-  hosts: all
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL == {{ URL }}
-
-- name: Variable from CLI
-  hosts: all
-  tasks:
-    - name: Print URL
-      ansible.builtin.debug:
-        msg: URL == {{ URL }}
-
-- name: Variable from Roles
-  hosts: all
-  roles:
-    - sample
-
-- name: Print fact
-  hosts: all
-  tasks:
-    - name: Print Hostname
-      ansible.builtin.debug:
-        msg: Hostname  == {{ ansible_hostname }}
+#- name: Demo on Play vars
+#  hosts: all
+#  vars:
+#    URL: play.example.com
+#  tasks:
+#    - name: Print URL
+#      ansible.builtin.debug:
+#        msg: URL == {{ URL }}
+#
+### In ansible we access variable within two flower brackets. {{URL}}, {{ URL }}, That spacing helps in reading the code in a better way.
+#
+## Play Variable - Declare on play, means all tasks can access that variable
+## Note: Variables of one play cannot be accessed by another play (By default)
+#
+#- name: Demo on Play var files
+#  hosts: all
+#  vars_files: demo-vars.yml
+#  tasks:
+#    - name: Print URL
+#      ansible.builtin.debug:
+#        msg: '{{ URL }}'
+#
+#
+#- name: Demo on task level variables
+#  hosts: all
+#  tasks:
+#    - name: Print URL
+#      ansible.builtin.debug:
+#        msg: URL == {{ URL }}
+#      #vars_files:
+#      vars:
+#        URL: task.example.com
+### Note: task level variables are limited to only that task.
+#
+#- name: Read the variable from inventory file
+#  hosts: all
+#  tasks:
+#    - name: Print URL
+#      ansible.builtin.debug:
+#        msg: URL == {{ URL }}
+#
+#- name: Variable from CLI
+#  hosts: all
+#  tasks:
+#    - name: Print URL
+#      ansible.builtin.debug:
+#        msg: URL == {{ URL }}
+#
+#- name: Variable from Roles
+#  hosts: all
+#  roles:
+#    - sample
+#
+#- name: Print fact
+#  hosts: all
+#  tasks:
+#    - name: Print Hostname
+#      ansible.builtin.debug:
+#        msg: Hostname  == {{ ansible_hostname }}
 
 - name: Demo on register
   hosts: all
   tasks:
     - name: Get uptime
       ansible.builtin.shell: uptime
-      
+
