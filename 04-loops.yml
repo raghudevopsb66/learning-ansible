@@ -20,5 +20,5 @@
         - one
         - two
       register: echo
-      changed_when: echo.stdout != "one"
+      when: item == "one"
 
