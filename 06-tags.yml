@@ -1,0 +1,12 @@
+- name: Demo on tasgs
+  hosts: localhost
+  tasks:
+    - name: Print Yellow
+      debug:
+        msg: yellow
+      tags: yellow
+    - name: Print Blue
+      debug:
+        msg: Blue
+      tags: blue
+
