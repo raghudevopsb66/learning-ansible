@@ -3,6 +3,6 @@
   tasks:
     - name: Download
       unarchive:
-        src: "http://3.239.252.142:8081/repository/cart/cart-1.0.5.zip"
+        src: "http://admin:admin123@3.239.252.142:8081/repository/cart/cart-1.0.5.zip"
         dest: /tmp
         remote_src: yes
